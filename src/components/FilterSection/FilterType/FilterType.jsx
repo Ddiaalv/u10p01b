@@ -6,7 +6,6 @@ export default class FilterType extends Component {
     return (
       <label htmlFor={tipoCampeon}>
         <input type="radio" id={tipoCampeon} name="tipoCampeon" value={tipoCampeon}></input>
-        {tipoCampeon}
       </label>
     );
   }
