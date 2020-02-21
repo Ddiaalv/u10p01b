@@ -5,7 +5,7 @@ function acceso(){
     document.getElementById("NoLog").style.display = "none";
     document.getElementById("verificacion").style.display = "none";
     document.getElementById("Logged").style.display = "inline";
-    document.getElementById("usuario").style.display = "inline";
+    document.getElementById("Usuario").style.display = "inline";
 }
   
 export default acceso
