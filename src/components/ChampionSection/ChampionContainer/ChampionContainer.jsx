@@ -1,19 +1,21 @@
 import React from 'react';
-import './ChampionContainer.css';
 import { connect } from 'react-redux';
+import './ChampionContainer.css';
 import ChampionCard from '../ChampionCard/ChampionCard';
-import FilterContainer from '../../FilterSection/FilterContainer/FilterContainer'
+import FilterContainer from '../../FilterSection/FilterContainer/FilterContainer';
 
-const ChampionContainer = ({ heroes, buscarCampeon, buscarTipo }) => (
-  <div>
-    <div className="championContainer">
-      <FilterContainer />
-      {filtrar(heroes, buscarCampeon, buscarTipo).map(campeon => (
-        <ChampionCard key={campeon.key} datos={campeon} />
-      ))}
+function ChampionContainer({ heroes, buscarCampeon, buscarTipo }) {
+  return (
+    <div>
+      <div className="championContainer">
+        <FilterContainer />
+        {filtrar(heroes, buscarCampeon, buscarTipo).map(campeon => (
+          <ChampionCard key={campeon.key} datos={campeon} />
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
 /**
  * Pequeño embudo con la funcionalidad de filtrar la lista de campeones segun lo que el usuario solicite.
@@ -22,18 +24,16 @@ const ChampionContainer = ({ heroes, buscarCampeon, buscarTipo }) => (
  * @param {Array} tipos Lista de tipos seleccionados por el usuario.
  */
 const filtrar = (campeones, buscarCampeon, tipos) => {
-  let campeonesFiltrados
+  let campeonesFiltrados;
   if (buscarCampeon !== '')
-    if(tipos.length >= 1) {
-      campeonesFiltrados = filtrarPorNombre(campeones, buscarCampeon)
-      campeonesFiltrados = filtrarPorTipo(campeonesFiltrados, tipos)
-    } else
-      campeonesFiltrados = filtrarPorNombre(campeones, buscarCampeon)
-  else
-    campeonesFiltrados = filtrarPorTipo(campeones, tipos)
-    console.log(campeonesFiltrados);
-  return campeonesFiltrados
-}
+    if (tipos.length >= 1) {
+      campeonesFiltrados = filtrarPorNombre(campeones, buscarCampeon);
+      campeonesFiltrados = filtrarPorTipo(campeonesFiltrados, tipos);
+    } else campeonesFiltrados = filtrarPorNombre(campeones, buscarCampeon);
+  else campeonesFiltrados = filtrarPorTipo(campeones, tipos);
+  console.log(campeonesFiltrados);
+  return campeonesFiltrados;
+};
 
 /**
  * Nos permite pasar por parametro la lista de campeones y el texto que se desea buscar entre la lista para devolver los campeones que coincidan con buscarCampeon.
@@ -58,10 +58,9 @@ const filtrarPorNombre = (campeones, buscarCampeon) => {
  * @param {array} tipos Lista de tipos seleccionados por el usuario
  */
 const filtrarPorTipo = (campeones, tipos) => {
-  let heroesFiltrados = 
-  campeones.filter(campeon => campeon.tags.includes(tipos[0]))
-    return heroesFiltrados
-}
+  let heroesFiltrados = campeones.filter(campeon => campeon.tags.includes(tipos[0]));
+  return heroesFiltrados;
+};
 
 /**
  * Permite pasar un estado a una prop para poder utilizarla en el componente actual.
@@ -70,7 +69,7 @@ const filtrarPorTipo = (campeones, tipos) => {
 const mapStateToProps = state => ({
   heroes: state.arrayHeroes,
   buscarCampeon: state.buscarCampeon,
-  buscarTipo: state.buscarTipo
+  buscarTipo: state.buscarTipo,
 });
 
 export default connect(mapStateToProps, {})(ChampionContainer);

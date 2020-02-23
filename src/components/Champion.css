@@ -1,0 +1,30 @@
+h1 {
+  color: #fff;
+}
+h2 {
+  color: #fff;
+}
+p {
+  color: #fff;
+}
+
+.detallesCampeon {
+  color: #fff;
+  position: relative;
+  z-index: 5;
+  margin-top: -100px;
+}
+
+.splashCampeon {
+  position: relative;
+}
+
+.splashCampeon:after {
+  content: '';
+  display: block;
+  background: linear-gradient(transparent, #000);
+  height: 130px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
