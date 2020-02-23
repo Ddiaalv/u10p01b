@@ -1,0 +1,22 @@
+label {
+  margin: 0 5px;
+}
+
+label img {
+  width: 40px;
+  cursor: url(https://vysfim0ck7k5a65fcr0d0t1x5jllpq.ext-twitch.tv/vysfim0ck7k5a65fcr0d0t1x5jllpq/0.9.0/18b3a37aea013dfb3cf8b6baefe34fac/hover_precise@2x.2b66ad00.png),
+    auto;
+  filter: grayscale(100%);
+  transition: linear 0.3s all;
+}
+
+label:hover img {
+  filter: grayscale(0%);
+}
+
+label [type='radio'] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}

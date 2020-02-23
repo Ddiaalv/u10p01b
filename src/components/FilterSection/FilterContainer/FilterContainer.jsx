@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FilterType from '../FilterType/FilterType';
 import { connect } from 'react-redux';
 import store from '../../store';
-
+import './FilterContainer.css';
 export class FilterContainer extends Component {
   constructor(props) {
     super(props);

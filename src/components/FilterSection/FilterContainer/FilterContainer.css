@@ -1,0 +1,21 @@
+.filterContainer {
+  width: 100%;
+  top: 7px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filterContainer [type='text'] {
+  height: 90%;
+  background: #0a1111;
+  border: 2px solid #365548;
+  padding: 7px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+[type='text']:focus {
+  outline: 2px solid #dfc680;
+}

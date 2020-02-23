@@ -2,10 +2,12 @@ import React from 'react';
 import './ChampionContainer.css';
 import { connect } from 'react-redux';
 import ChampionCard from '../ChampionCard/ChampionCard';
+import FilterContainer from '../../FilterSection/FilterContainer/FilterContainer'
 
 const ChampionContainer = ({ heroes, buscarCampeon, buscarTipo }) => (
   <div>
     <div className="championContainer">
+      <FilterContainer />
       {filtrar(heroes, buscarCampeon, buscarTipo).map(campeon => (
         <ChampionCard key={campeon.key} datos={campeon} />
       ))}

@@ -1,38 +1,58 @@
+body {
+  background: #000;
+  cursor: url(https://vysfim0ck7k5a65fcr0d0t1x5jllpq.ext-twitch.tv/vysfim0ck7k5a65fcr0d0t1x5jllpq/0.9.0/18b3a37aea013dfb3cf8b6baefe34fac/hover_precise@2x.2b66ad00.png),
+    auto;
+}
+
 .App {
   text-align: center;
-  background: #00050b;
+  background: #000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.cabecera {
+  position: relative;
+  height: 70vh;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.cabecera img {
+  position: relative;
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cabecera h3 {
+  position: relative;
+  z-index: 1;
+}
+
+.cabecera video {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.cabecera:after {
+  content: '';
+  display: block;
+  background: linear-gradient(transparent, #000);
+  height: 130px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.cabecera iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
