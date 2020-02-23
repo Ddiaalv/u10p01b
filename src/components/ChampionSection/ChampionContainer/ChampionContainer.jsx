@@ -13,6 +13,12 @@ const ChampionContainer = ({ heroes, buscarCampeon, buscarTipo }) => (
   </div>
 );
 
+/**
+ * Pequeño embudo con la funcionalidad de filtrar la lista de campeones segun lo que el usuario solicite.
+ * @param {Array} campeones Lista de campeones. Array de objetos
+ * @param {String} buscarCampeon Cadena de texto referente al nombre del campeon a buscar.
+ * @param {Array} tipos Lista de tipos seleccionados por el usuario.
+ */
 const filtrar = (campeones, buscarCampeon, tipos) => {
   let campeonesFiltrados
   if (buscarCampeon !== '')

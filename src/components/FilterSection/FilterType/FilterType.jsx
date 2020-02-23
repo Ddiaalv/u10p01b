@@ -27,7 +27,7 @@ export class FilterType extends Component {
     const tipoCampeon = this.props.tipo;
     return (
       <label htmlFor={tipoCampeon}>
-        <input type="checkbox" 
+        <input type="radio" 
         id={tipoCampeon} 
         name="tipoCampeon" 
         ref="check_me" 
