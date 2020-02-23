@@ -24,7 +24,7 @@ export class FilterContainer extends Component {
   }
 
   render() {
-    const tiposCampeones = ['Mage', 'Tank', 'Slayer', 'Controller', 'Fighter'];
+    const tiposCampeones = ['Mage', 'Tank', 'Marksman', 'Support', 'Fighter'];
     return (
       <div className="filterContainer">
         <label htmlFor="buscarCampeon">
