@@ -19,6 +19,7 @@ export default class CrearCuenta extends Component {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
+            // eslint-disable-next-line eqeqeq
             if (errorCode == 'auth/weak-password') {
               alert('The password is too weak.');
             } else {

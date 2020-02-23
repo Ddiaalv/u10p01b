@@ -11,6 +11,7 @@ export default class AccederTlfn extends Component {
     document.getElementById("recaptcha-container").style.display = "inline"
     let number = document.getElementById('telefono').value
     number = number.replace(/ /g, "")
+    // eslint-disable-next-line eqeqeq
     if(number.length == 9 && !(isNaN(number+0))){
       number = `+34${number}`
       window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
@@ -44,6 +45,7 @@ export default class AccederTlfn extends Component {
         document.getElementById("verificacion").style.display = "none"
         document.getElementById("Info").innerHTML = ""
         document.getElementById("saludo").innerHTML = `Bienvenido ${document.getElementById('telefono').value}`;
+        // eslint-disable-next-line no-unused-vars
         let user = result.user;
         acceso();
       })
