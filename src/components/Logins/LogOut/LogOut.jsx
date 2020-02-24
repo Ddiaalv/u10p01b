@@ -32,7 +32,9 @@ export default class LogOut extends Component {
   render() {
     return (
       <div id="Logged">
-        <button><Link to="/" onClick={this.logout}>Logout</Link></button>
+        <a href="/">
+          <button>Logout</button>
+        </a>
       </div>
     );
   }

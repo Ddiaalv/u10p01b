@@ -26,9 +26,7 @@ function App() {
           <AccederTlfn />
           <OtrosLogins />
           <Errores />
-          <Router>
-            <LogOut />
-          </Router>
+          <LogOut />
         </div>
         <header className="cabecera">
           <a href="/">
@@ -43,7 +41,6 @@ function App() {
         </header>
         <div id="logueado">
           <Router>
-            <LogOut />
             <Switch>
               <Route path="/" exact component={ChampionContainer} />
               <Route path="/campeones/:idCampeon" component={Champion} />
