@@ -7,6 +7,7 @@ function acceso(){
     document.getElementById("ErroresSolucion").style.display = "inline"
     document.getElementById("Logged").style.display = "inline";
     document.getElementById("Usuario").style.display = "inline";
+    document.getElementById("logueado").style.display ="inline"
 }
   
 export default acceso
