@@ -7,6 +7,7 @@ import LogOut from './components/Logins/LogOut/LogOut';
 import Acceder from './components/Logins/Registrado/Acceder';
 import AccederTlfn from './components/Logins/Registrado/AccederTlfn';
 import OtrosLogins from './components/Logins/OtrosLogins/OtrosLogins';
+import Errores from './components/Modal/Errores';
 import lolLogo from './components/assets/img/lolLogo.png';
 import Champion from './components/Champion'
 import './App.css';
@@ -22,6 +23,7 @@ function App() {
           <AccederTlfn />
           <OtrosLogins />
           <LogOut />
+          <Errores/>
         </div>
         <header className="cabecera">
           <img className="lolLogo" src={lolLogo} alt="Logo del League of Legends" />
