@@ -1,14 +1,21 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import Axios from 'axios'
-import './Champion.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Axios from 'axios';
+import './Champion.css';
+import Chart from 'react-google-charts';
 
 export default class Champion extends Component {
-    state = {
+  state = {
     campeonData: [],
     arrayCampeones: [],
-    urlSplash: `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/`
-  }
+    urlSplash: `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/`,
+    chartData: [],
+    skillData01: [],
+    skillData02: [],
+    skillData03: [],
+    skillData04: [],
+    skillData: [],
+  };
 
   componentDidMount() {
     const id = this.props.match.params.idCampeon;
@@ -23,8 +30,36 @@ export default class Champion extends Component {
 
   convertirArray = objeto => {
     Object.entries(objeto).map(campeon => this.state.arrayCampeones.push(campeon[1]));
+    this.obtenerCooldowns(this.state.arrayCampeones);
     console.log(this.state.arrayCampeones);
   };
+
+  obtenerCooldowns(arrayCampeones) {
+    const skillData01 = [['Habilidad', 'Cooldown']];
+    const skillData02 = [['Habilidad', 'Cooldown']];
+    const skillData03 = [['Habilidad', 'Cooldown']];
+    const skillData04 = [['Habilidad', 'Cooldown']];
+    arrayCampeones.map(campeon => {
+      campeon.spells.map((spell, index) => {
+        spell.cooldown.map((cd, indexCD) => {
+          if (index === 0) skillData01.push([`${spell.name} lvl${indexCD + 1}`, cd]);
+          if (index === 1) skillData02.push([`${spell.name} lvl${indexCD + 1}`, cd]);
+          if (index === 2) skillData03.push([`${spell.name} lvl${indexCD + 1}`, cd]);
+          if (index === 3) skillData04.push([`${spell.name} lvl${indexCD + 1}`, cd]);
+        });
+      });
+    });
+    this.setState({
+      skillData01: skillData01,
+      skillData02: skillData02,
+      skillData03: skillData03,
+      skillData04: skillData04,
+    });
+    this.state.skillData.push(this.state.skillData01);
+    this.state.skillData.push(this.state.skillData02);
+    this.state.skillData.push(this.state.skillData03);
+    this.state.skillData.push(this.state.skillData04);
+  }
 
   render() {
     return (
@@ -39,11 +74,23 @@ export default class Champion extends Component {
               <span>LORE: {campeon.lore}</span>
               <span>ROL: {campeon.tags[0]}</span>
               <div className="hechizos">
-                {campeon.spells.map(spell => (
+                {campeon.spells.map((spell, index) => (
                   <div className="hechizo">
                     <img src={`http://ddragon.leagueoflegends.com/cdn/10.4.1/img/spell/${spell.id}.png`} alt="" />
                     <p>{spell.name}</p>
                     <p>{spell.description}</p>
+                    <Chart
+                      width={'500px'}
+                      height={'300px'}
+                      chartType="PieChart"
+                      loader={<div>Loading Chart</div>}
+                      data={this.state.skillData[index]}
+                      options={{
+                        title: 'Cooldowns',
+                        is3D: true,
+                      }}
+                      rootProps={{ 'data-testid': '2' }}
+                    />
                   </div>
                 ))}
               </div>
