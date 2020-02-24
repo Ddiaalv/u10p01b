@@ -11,7 +11,7 @@ p {
 .detallesCampeon {
   color: #fff;
   position: relative;
-  z-index: 5;
+  z-index: 1;
   margin-top: -100px;
 }
 
