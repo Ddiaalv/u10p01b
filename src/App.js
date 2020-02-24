@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import store from './components/store';
 import ChampionContainer from './components/ChampionSection/ChampionContainer/ChampionContainer';
 import CrearCuenta from './components/Logins/CrearCuenta/CrearCuenta';
+import './components/Logins/LogOut/LogOut.css';
 import LogOut from './components/Logins/LogOut/LogOut';
 import Acceder from './components/Logins/Registrado/Acceder';
 import AccederTlfn from './components/Logins/Registrado/AccederTlfn';
@@ -22,7 +23,6 @@ function App() {
           <Acceder />
           <AccederTlfn />
           <OtrosLogins />
-          <LogOut />
           <Errores/>
         </div>
         <header className="cabecera">
@@ -35,8 +35,9 @@ function App() {
             />
           </video>
         </header>
-        <div>
+        <div id="logueado">
           <Router>
+          <LogOut />
             <Switch>
               <Route path="/" exact component={ChampionContainer} />
               <Route path="/campeones/:idCampeon" component={Champion} />

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import fire from '../../../fire.js';
 import './LogOut.css';
 
@@ -23,6 +24,7 @@ export default class LogOut extends Component {
       document.getElementById("NoLog").style.display = "none";
       document.getElementById("Logged").style.display = "none";
       document.getElementById("ErroresSolucion").style.display = "none"
+      document.getElementById("logueado").style.display ="none"
     })
       .catch(console.log);
   }
@@ -30,7 +32,7 @@ export default class LogOut extends Component {
   render() {
     return (
       <div id="Logged">
-        <button onClick={this.logout}>Logout</button>
+        <button><Link to="/" onClick={this.logout}>Logout</Link></button>
       </div>
     );
   }
