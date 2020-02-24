@@ -25,11 +25,6 @@ body {
   z-index: 1;
 }
 
-.cabecera h3 {
-  position: relative;
-  z-index: 1;
-}
-
 .cabecera video {
   position: absolute;
   z-index: 0;

@@ -1,3 +1,7 @@
-#ErroresSolucion{
-    display: none;
+#ErroresSolucion {
+  display: none;
+}
+
+.ReactModal__Overlay {
+  z-index: 2;
 }

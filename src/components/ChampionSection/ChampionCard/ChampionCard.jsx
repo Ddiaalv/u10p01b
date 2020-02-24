@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+
 import './ChampionCard.css'
 
 export default class ChampionCard extends Component {
-
   styleChampionCard = {
     textDecoration: 'none'
   }

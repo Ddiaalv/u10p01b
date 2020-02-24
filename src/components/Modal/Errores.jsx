@@ -38,11 +38,11 @@ export default class Errores extends Component {
             <p id="PreP1">Si observamos que la pagina no tiene los campeones tras logearnos o usar el filtro (Como en la siguiente imagen) realizamos lo siguiente</p>
             <img id="Paso1" src={Paso1} alt="Paso numero 1 para solucionar error"></img>
             <p id="PreP2">Accedemos a la configuracion del sitio web</p>
-            <img id="Paso2" src={Paso2} alt="Paso numero 1 para solucionar error"></img>
+            <img id="Paso2" src={Paso2} alt="Paso numero 2 para solucionar error"></img>
             <p id="PreP3">Cambiamos el contenido no seguro de Bloquear a Permitir (Ya que la api del lol devuelve una conexion http en vez de https y firebase la bloquea)</p>
-            <img id="Paso3" src={Paso3} alt="Paso numero 1 para solucionar error"></img>
+            <img id="Paso3" src={Paso3} alt="Paso numero 3 para solucionar error"></img>
             <p id="PreP4">Finalmente volvemos a la pagina y recargamos</p>
-            <img id="Paso4" src={Paso4} alt="Paso numero 1 para solucionar error"></img>
+            <img id="Paso4" src={Paso4} alt="Paso numero 4 para solucionar error"></img>
           </Modal>
         </div>
       );

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Axios from 'axios';
-import './Champion.css';
 import Chart from 'react-google-charts';
+import Axios from 'axios';
+
+import './Champion.css';
 
 export default class Champion extends Component {
   state = {

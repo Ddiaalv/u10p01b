@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './ChampionContainer.css';
-import ChampionCard from '../ChampionCard/ChampionCard';
 import FilterContainer from '../../FilterSection/FilterContainer/FilterContainer';
+import ChampionCard from '../ChampionCard/ChampionCard';
+
+import './ChampionContainer.css';
 
 function ChampionContainer({ heroes, buscarCampeon, buscarTipo }) {
   return (

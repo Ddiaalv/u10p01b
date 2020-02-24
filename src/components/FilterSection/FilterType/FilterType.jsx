@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import store from '../../store';
+
 import imgTank from '../../assets/img/types/Tank.webp'
 import imgFighter from '../../assets/img/types/Fighter.webp'
 import imgMage from '../../assets/img/types/Mage.webp'
 import imgMarksman from '../../assets/img/types/Marksman.webp'
 import imgSupport from '../../assets/img/types/Support.webp'
+
 import './FilterType.css';
 
 export class FilterType extends Component {
