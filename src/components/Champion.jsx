@@ -34,13 +34,20 @@ export default class Champion extends Component {
     console.log(this.state.arrayCampeones);
   };
 
+  /**
+   * Nos permite extraer varios array con los diferentes valores del cooldown de las habilidades, para luego pintar una gráfica con dichos valores por habilidad.
+   * @param {Array} arrayCampeones Lista de campeones, array de objetos
+   */
   obtenerCooldowns(arrayCampeones) {
     const skillData01 = [['Habilidad', 'Cooldown']];
     const skillData02 = [['Habilidad', 'Cooldown']];
     const skillData03 = [['Habilidad', 'Cooldown']];
     const skillData04 = [['Habilidad', 'Cooldown']];
+    // eslint-disable-next-line array-callback-return
     arrayCampeones.map(campeon => {
+      // eslint-disable-next-line array-callback-return
       campeon.spells.map((spell, index) => {
+        // eslint-disable-next-line array-callback-return
         spell.cooldown.map((cd, indexCD) => {
           if (index === 0) skillData01.push([`${spell.name} lvl${indexCD + 1}`, cd]);
           if (index === 1) skillData02.push([`${spell.name} lvl${indexCD + 1}`, cd]);
@@ -86,7 +93,7 @@ export default class Champion extends Component {
                       loader={<div>Loading Chart</div>}
                       data={this.state.skillData[index]}
                       options={{
-                        title: 'Cooldowns',
+                        title: `Cooldown: ${spell.name}`,
                         is3D: true,
                       }}
                       rootProps={{ 'data-testid': '2' }}
