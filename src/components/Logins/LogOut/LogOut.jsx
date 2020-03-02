@@ -5,7 +5,9 @@ import './LogOut.css';
 
 export default class LogOut extends Component {
 
-  //Desconecta al usuario y muestra nuevamente el crear usuario
+  /**
+  * Desconecta al usuario y muestra nuevamente el crear usuario
+  */
   logout() {
     //Limpia los campos del login
     document.getElementById("Nombre").value = "";

@@ -7,7 +7,9 @@ const aceptPassw = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$
 
 export default class CrearCuenta extends Component {
 
-  //Recoge los campos de usuario y contraseña y tras contrastarlos con las expresiones regulares, si cumplen crea la cuenta en firebase
+  /**
+  * Recoge los campos de usuario y contraseña y tras contrastarlos con las expresiones regulares, si cumplen crea la cuenta en firebase
+  */
   registrar() {
     let email = document.getElementById("Nombre").value;
     let password = document.getElementById("Pass").value;
@@ -50,7 +52,9 @@ export default class CrearCuenta extends Component {
     document.getElementById("Info").innerHTML = messError
   }
 
-  //Nos oculta el crear usuario y nos muestra los otros metodos de login
+  /**
+  * Nos oculta el crear usuario y nos muestra los otros metodos de login
+  */
   registered() {
     document.getElementById("registrado").style.display = "inline";
     document.getElementById("registradoTlfn").style.display = "inline";

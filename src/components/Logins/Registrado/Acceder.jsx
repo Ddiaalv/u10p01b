@@ -6,7 +6,9 @@ import './Acceder.css';
 
 export default class Acceder extends Component {
 
-  //realiza una peticion con el usuario y la contraseña y si firebase lo tiene en sus usuarios le permite el acceso al resto de la pagina
+  /**
+   * realiza una peticion con el usuario y la contraseña y si firebase lo tiene en sus usuarios le permite el acceso al resto de la pagina
+   */
   acceder() {
 
     let email = document.getElementById("Usuario").value;

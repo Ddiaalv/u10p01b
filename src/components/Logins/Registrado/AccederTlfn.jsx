@@ -6,7 +6,9 @@ import './Acceder.css';
 
 export default class AccederTlfn extends Component {
 
-  //Obtiene el numero del telefono y verifica el captcha para mandar un SMS con el codigo de verificacion
+  /**
+  * Obtiene el numero del telefono y verifica el captcha para mandar un SMS con el codigo de verificacion
+  */
   phoneAuth() {
     document.getElementById("recaptcha-container").style.display = "inline"
     let number = document.getElementById('telefono').value
@@ -36,7 +38,9 @@ export default class AccederTlfn extends Component {
   }
 
 
-  //Verifica el codigo enviado previamente al usuario
+  /**
+  * Verifica el codigo enviado previamente al usuario
+  */
   codeVerify() {
     
     var code = document.getElementById('Codigo').value

@@ -6,7 +6,9 @@ import './OtrosLogins.css';
 
 export default class OtrosLogins extends Component {
 
-    //Nos pedira permiso para permitir a nuestra aplicacion registrar la cuenta de github como un usuario y posteriormente lo guardara
+    /**
+    * Nos pedira permiso para permitir a nuestra aplicacion registrar la cuenta de github como un usuario y posteriormente lo guardara
+    */
     gitHubSignin() {
         let provider = new firebase.auth.GithubAuthProvider();
         fire.auth().signInWithPopup(provider)
@@ -22,7 +24,10 @@ export default class OtrosLogins extends Component {
             console.log(error);
           });
     }
-    //Nos pedira permiso para permitir a nuestra aplicacion registrar la cuenta de twitter como un usuario y posteriormente lo guardara
+
+    /**
+    * Nos pedira permiso para permitir a nuestra aplicacion registrar la cuenta de twitter como un usuario y posteriormente lo guardara
+    */
     twitterSignin() {
         let provider = new firebase.auth.TwitterAuthProvider();
         fire.auth().signInWithPopup(provider)
@@ -39,7 +44,9 @@ export default class OtrosLogins extends Component {
           });
     }
 
-    //Nos vuelve a mostrar el crear usuario con correo y clave
+    /**
+    * Nos vuelve a mostrar el crear usuario con correo y clave
+    */
     crear() {
         document.getElementById("registrado").style.display = "none";
         document.getElementById("NoLog").style.display = "none";
